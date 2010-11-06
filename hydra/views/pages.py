@@ -12,7 +12,7 @@ def render_page(pagename):
     html, title = md2html(netcat(url))
     return render_template(
         'page.html',
-        html=html, markup_url=url)
+        html=html, title=title, markup_url=url)
     
     
 def md2html(md):
