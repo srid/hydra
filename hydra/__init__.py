@@ -1,12 +1,10 @@
 import socket
-import datetime
 from flask import Flask
 from hydra.views.pages import pages
 from hydra.views.main import main
 
 app = Flask(__name__)
 app.debug = True
-app_start = datetime.datetime.now()
 app.register_module(pages)
 app.register_module(main)
 

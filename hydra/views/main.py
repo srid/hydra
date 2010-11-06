@@ -3,6 +3,7 @@ from flask import Response, Module
 
 main = Module(__name__)
 
+app_start = datetime.datetime.now()
 
 @main.route('/')
 def index():
