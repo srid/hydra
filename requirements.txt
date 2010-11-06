@@ -1,0 +1,5 @@
+# install using pip or pypm
+#  pip install -r requirements.txt
+#  pypm install -r requirements.txt
+flask
+markdown2
