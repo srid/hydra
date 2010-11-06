@@ -13,4 +13,3 @@ def index():
 @main.route('/src')
 def expose_self():
     return Response(open(__file__).read(), mimetype='text/plain')
-    
