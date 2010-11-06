@@ -25,12 +25,7 @@ def render_page(pagename):
     url = u.format(pagename)
     html, title = md2html(netcat(url))
     html = ''.join([
-        '<style type="text/css">'
-        'body {font-family: Arial, Helvetica, sans-serif; margin: 5% 24%; background-color: #eeeeee; line-height: 160%; color: #5A4735;}'
-        'h1,h2,h3 {font-family: Georgia, "Times New Roman", Times, serif; letter-spacing: 2px; color: #284907;}'
-        'a,a:hover,a:visited {color: brown; text-decoration: none;}'
-        'a:hover {text-decoration: underline;}'
-        '</style>',
+        '<link rel="stylesheet" href="/static/style.css" type="text/css" />'
         '<title>' + title + '</title>',
         html,
         '<hr />',
