@@ -2,7 +2,7 @@ import socket
 import datetime
 import markdown2
 import urllib2
-from flask import Flask, Response
+from flask import Flask, Response, render_template
 
 app = Flask(__name__)
 app.debug = True
@@ -24,19 +24,9 @@ u = 'http://dl.dropbox.com/u/87045/p/{0}.md.txt'
 def render_page(pagename):
     url = u.format(pagename)
     html, title = md2html(netcat(url))
-    html = ''.join([
-        '<link rel="stylesheet" href="/static/style.css" type="text/css" />'
-        '<title>' + title + '</title>',
-        html,
-        '<hr />',
-        '<a href="{0}">View markdown source</a>'.format(url),
-        '<br />', '<br />',
-        '<span style="font-size: 60%; color: #888888;">Powered by <a href="http://flask.pocoo.org/">Flask</a>, '
-        '<a href="http://blog.nearlyfreespeech.net/2010/04/03/pools-arbitrary-http-servers-resource-reservation-and-scalability/"'
-        '>NFS Pools</a>, Dropbox, Komodo and ExpanDrive; '
-        '<a href="/src">view site source</a>'
-    ])
-    return html
+    return render_template(
+        'page.html',
+        html=html, markup_url=url)
     
     
 def md2html(md):
