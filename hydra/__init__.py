@@ -1,15 +1,15 @@
-import socket
-from flask import Flask
-from hydra.views.pages import pages
-from hydra.views.main import main
+from pyramid.configuration import Configurator
+from pyramid_jinja2 import renderer_factory
+from hydra.models import get_root
 
-app = Flask(__name__)
-app.debug = True
-app.register_module(pages)
-app.register_module(main)
-
-
-if __name__ == '__main__':
-    PROD = 'nfshost.com' in socket.gethostname()
-    host, port = ('127.0.0.1', 80) if PROD else ('0.0.0.0', 8000)
-    app.run(host=host, port=port)
+def app(global_config, **settings):
+    """ This function returns a WSGI application.
+    
+    It is usually called by the PasteDeploy framework during 
+    ``paster serve``.
+    """
+    config = Configurator(root_factory=get_root, settings=settings)
+    config.begin()
+    config.load_zcml('configure.zcml')
+    config.end()
+    return config.make_wsgi_app()

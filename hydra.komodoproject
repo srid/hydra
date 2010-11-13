@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
-<project id="0b7a509c-e88a-4903-bfc4-a31c14fbdf3d" kpf_version="5" name="hydra.komodoproject">
-<preference-set idref="0b7a509c-e88a-4903-bfc4-a31c14fbdf3d">
+<project id="f0ae52f0-8c9e-4454-9d1b-757d05aa366c" kpf_version="5" name="hydra.komodoproject">
+<preference-set idref="f0ae52f0-8c9e-4454-9d1b-757d05aa366c">
+  <string relative="path" id="import_dirname"></string>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;_svn;.git;.hg;.bzr;*%*;tmp*.html;.DS_Store;*.swp;.komodotools;.egg-info</string>
+  <string id="import_include_matches"></string>
   <boolean id="import_live">1</boolean>
+  <string id="lastTestPlanName_pref">New test plan #1</string>
+  <string relative="path" id="pythonExtraPaths"></string>
+<preference-set id="testPlans">
+<preference-set id="New test plan #1">
+  <string id="command_line"></string>
+  <string relative="url" id="directory"></string>
+  <string id="language">Perl - TAP (*.t)</string>
+</preference-set>
+</preference-set>
 </preference-set>
 </project>

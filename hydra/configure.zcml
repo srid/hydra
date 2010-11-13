@@ -1,0 +1,18 @@
+<configure xmlns="http://pylonshq.com/pyramid">
+
+  <!-- this must be included for the view declarations to work -->
+  <include package="pyramid.includes" />
+  <include package="pyramid_jinja2" />
+
+  <view
+     context=".models.MyModel"
+     view=".views.my_view"
+     renderer="index.jinja2"
+     />
+  
+  <static
+     name="static"
+     path="static"
+     />
+
+</configure>

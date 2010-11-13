@@ -1,0 +1,10 @@
+{
+  "keyboard_shortcut": "", 
+  "set_selection": "false", 
+  "name": "block", 
+  "type": "snippet", 
+  "value": [
+    "{% block [[%tabstop:name]] %} [[%tabstop:NAME%]] {% endblock %}!@#_currentPos!@#_anchor"
+  ], 
+  "indent_relative": "false"
+}
