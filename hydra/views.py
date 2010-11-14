@@ -3,9 +3,9 @@ from docutils.core import publish_parts
 
 
 def my_view(context, request):
-    src = 'http://dl.dropbox.com/u/87045/p/blog.rst'
-    html = rst2html(netcat(src))
-    return {'html': html}
+    # src = 'http://dl.dropbox.com/u/87045/p/blog.rst'
+    # html = rst2html(netcat(src))
+    return {'html': 'Hello World'}
 
 
 def rst2html(rst):
